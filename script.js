@@ -55,6 +55,3 @@ function playGame(){
 		console.log("What luck, try again!✨");
 	}
 }
-
-playGame();
-
