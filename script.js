@@ -55,3 +55,35 @@ function playGame(){
 		console.log("What luck, try again!✨");
 	}
 }
+
+const btnRock = document.getElementById("btnRock");
+const btnPaper = document.getElementById("btnPaper");
+const btnScissor = document.getElementById("btnScissor");
+
+btnRock.addEventListener('click', (event) => {
+	// Get the value of the clicked button
+	const value = event.target.value;
+
+	// Output the value
+	console.log("Button value:", value);
+	alert("You clicked: " + value);
+
+});
+btnPaper.addEventListener('click', (event) => {
+	// Get the value of the clicked button
+	const value = event.target.value;
+
+	// Output the value
+	console.log("Button value:", value);
+	alert("You clicked: " + value);
+
+});
+btnScissor.addEventListener('click', (event) => {
+	// Get the value of the clicked button
+	const value = event.target.value;
+
+	// Output the value
+	console.log("Button value:", value);
+	alert("You clicked: " + value);
+
+});
