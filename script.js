@@ -4,86 +4,69 @@ function getComputerChoice() {
     else if (number === 2) {return "PAPER"}
     else return "SCISSOR";
 }
-function getHumanChoice() {
-    return prompt("Enter a choice: ").toUpperCase();
+function getHumanChoice(event) {
+    return event.target.value;
 }
 
 function playGame(){
-    let humanScore = 0, computerScore = 0, count = 5;
-	
+    let humanScore = 0, computerScore = 0;
+
 	function playRound(humanChoice, computerChoice){
 		if (humanChoice === "ROCK") {
 			if (computerChoice === "SCISSOR") {
 				humanScore++;
-				console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
+				message.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
 			} else if (computerChoice === "PAPER") {
 				computerScore++;
-				console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-			}else {console.log("It's a Draw!");}        
+				message.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+			}else {message.textContent = "It's a Draw!";}        
 		}else if (humanChoice === "PAPER") {
 			if (computerChoice === "ROCK") {
 				humanScore++;
-				console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
+				message.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
 			} else if (computerChoice === "SCISSOR") {
 				computerScore++;
-				console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-			}else {console.log("It's a Draw!");}
+				message.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+			}else {message.textContent = "It's a Draw!";}
 		}else {
 			if (computerChoice === "PAPER") {
 				humanScore++;
-				console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
+				message.textContent = `You win! ${humanChoice} beats ${computerChoice}.`;
 			} else if (computerChoice === "ROCK") {
 				computerScore++;
-				console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-			}else {console.log("It's a Draw!");}
+				message.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+			}else {message.textContent = "It's a Draw!";}
 		}
 	}
+	
+	const buttons = document.querySelectorAll('button');
+	const playerP = document.querySelector("#player");
+	const computerP = document.querySelector("#computer");
+	const message = document.querySelector("#message");
 
-	while (count--) {
-		let humanSelection = getHumanChoice();
-		let computerSelection = getComputerChoice();
+	// Loop through each button and add a click event listener
+	buttons.forEach(button => {
+		button.addEventListener('click', event => {
+			event.preventDefault();
+			// Get the value of the clicked button
+			let playerSelection = getHumanChoice(event);
+			let computerSelection = getComputerChoice();
 
-		playRound(humanSelection, computerSelection);
-	}
-	console.log(`Your Score: ${humanScore}\nBot Score: ${computerScore}`)
+			playRound(playerSelection, computerSelection);
 
-	if (humanScore > computerScore) {
-		console.log("Congratulations, you Win!🥳");
-	}else if (humanScore < computerScore) {
-		console.log("Oh no, you Lose!😭");
-	}else {
-		console.log("What luck, try again!✨");
-	}
+			playerP.textContent = `Your Score: ${humanScore}`;
+			computerP.textContent = `Bot Score: ${computerScore}`;
+
+			if (humanScore == 5 || computerScore == 5){
+				if (humanScore > computerScore) {
+					message.textContent = "Congratulations, you Win!🥳";
+				}else if (humanScore < computerScore) {
+					message.textContent = "Oh no, you Lose!😭";
+				}else {
+					message.textContent = "What luck, try again!✨";}
+			}
+		});
+	});
 }
 
-const btnRock = document.getElementById("btnRock");
-const btnPaper = document.getElementById("btnPaper");
-const btnScissor = document.getElementById("btnScissor");
-
-btnRock.addEventListener('click', (event) => {
-	// Get the value of the clicked button
-	const value = event.target.value;
-
-	// Output the value
-	console.log("Button value:", value);
-	alert("You clicked: " + value);
-
-});
-btnPaper.addEventListener('click', (event) => {
-	// Get the value of the clicked button
-	const value = event.target.value;
-
-	// Output the value
-	console.log("Button value:", value);
-	alert("You clicked: " + value);
-
-});
-btnScissor.addEventListener('click', (event) => {
-	// Get the value of the clicked button
-	const value = event.target.value;
-
-	// Output the value
-	console.log("Button value:", value);
-	alert("You clicked: " + value);
-
-});
+playGame();
