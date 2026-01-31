@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissor!</title>
-    <script src="script.js">
-    </script>
     <style>
         body {
             font-family: 'Courier New', Courier, monospace;
@@ -21,10 +19,14 @@
 </head>
 <body>
     <h1>Rock👊, Paper🖐️, Scissor✌️!</h1>
-    <p>This game uses the console. <br>Inspect this website to play and type <u>playGame()</u> to Start.</p>
     <button id="btnRock" value="ROCK">ROCK</button>
     <button id="btnPaper" value="PAPER">PAPER</button>
     <button id="btnScissor" value="SCISSOR">SCISSOR</button>
+    <div class="result">
+        <p id="player">Your Score: </p>
+        <p id="computer">Bot Score: </p>
+        <p id="message"></p>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
