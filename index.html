@@ -4,28 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissor!</title>
-    <style>
-        body {
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Rock👊, Paper🖐️, Scissor✌️!</h1>
-    <button id="btnRock" value="ROCK">ROCK</button>
-    <button id="btnPaper" value="PAPER">PAPER</button>
-    <button id="btnScissor" value="SCISSOR">SCISSOR</button>
+    <h1>Rock, Paper, Scissor!</h1>
+    <p>Choose your weapon and win against me 🤖</p>
+    <div class="options">
+        <button id="btnRock" value="ROCK">
+            <img src="images/hand_rock.jpg" alt="ROCK">
+        </button>
+        <button id="btnPaper" value="PAPER">
+            <img src="images/hand_paper.jpg" alt="PAPER">
+        </button>
+        <button id="btnScissor" value="SCISSOR">
+            <img src="images/hand_scissor.png" alt="SCISSOR">
+        </button>
+    </div>
     <div class="result">
         <p id="player">Your Score: </p>
         <p id="computer">Bot Score: </p>
-        <p id="message"></p>
+        <p id="message">...</p>
     </div>
     <script src="script.js"></script>
 </body>
