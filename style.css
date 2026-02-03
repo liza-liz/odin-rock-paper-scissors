@@ -1,0 +1,49 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+h1 {
+    /* border: 5px solid red; */
+    margin: 25% 0 0 0;
+}
+
+/* Pulse animation keyframes */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Class to trigger the animation */
+.pulse {
+  animation: pulse 0.3s ease;
+}
+/* Style the button with a background image */
+.options {
+    /* border: 5px solid green; */
+    display: flex;
+    margin: 5% 0 0 0;
+}
+button {
+    background-color: white;
+    border: 2px solid gray;
+    cursor: pointer;
+    border-radius: 50px;  
+    margin: 0 10px;
+}
+button img {
+    width: 60px;       
+    height: 60px;
+    border-radius: 50px;
+}
+
+#message {
+    margin: 30px 0 0 0;
+    white-space: pre-line;
+}
