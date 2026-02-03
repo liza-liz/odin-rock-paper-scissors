@@ -9,7 +9,6 @@ body {
     margin: 0;
 }
 h1 {
-    /* border: 5px solid red; */
     margin: 25% 0 0 0;
 }
 
@@ -26,7 +25,6 @@ h1 {
 }
 /* Style the button with a background image */
 .options {
-    /* border: 5px solid green; */
     display: flex;
     margin: 5% 0 0 0;
 }
