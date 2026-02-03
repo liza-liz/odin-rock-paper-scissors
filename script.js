@@ -5,7 +5,7 @@ function getComputerChoice() {
     else return "SCISSOR";
 }
 function getHumanChoice(event) {
-    return event.target.value;
+    return event.currentTarget.value;
 }
 
 function playGame(){
@@ -64,7 +64,13 @@ function playGame(){
 					message.textContent = "Oh no, you Lose!😭";
 				}else {
 					message.textContent = "What luck, try again!✨";}
+				message.textContent += "\nPlay Again by Choosing your weapon";
+				humanScore = 0; computerScore = 0;
 			}
+			message.classList.remove("pulse"); // reset animation
+			void message.offsetWidth; // force reflow to restart animation
+			message.classList.add("pulse");
+
 		});
 	});
 }
